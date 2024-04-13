@@ -31,7 +31,7 @@ def update_contact(user_id):
     contact = Contact.query.get(user_id)
     if not contact:
         return jsonify({"message": "Contact not found"}), 404
-    data = request.json
+    data = request.jsons
     contact.first_name = data.get('firstName', contact.first_name)
     contact.last_name = data.get('lastName', contact.last_name)
     contact.email = data.get('email', contact.email)
